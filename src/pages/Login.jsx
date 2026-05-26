@@ -53,18 +53,28 @@ function Login() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        padding: "20px",
       }}
     >
       <div
         style={{
-          width: "420px",
+          width: "90%",
+          maxWidth: "420px",
           background: "white",
           borderRadius: "20px",
-          padding: "40px",
+          padding: "35px",
           boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
+          margin: "20px",
         }}
       >
-        <h1 style={{ textAlign: "center", marginBottom: "30px" }}>
+        <h1
+          style={{
+            textAlign: "center",
+            marginBottom: "30px",
+            fontSize: "clamp(30px, 5vw, 42px)",
+            color: "#2563eb",
+          }}
+        >
           Login
         </h1>
 
@@ -95,13 +105,23 @@ function Login() {
             color: "white",
             fontSize: "18px",
             fontWeight: "bold",
+            cursor: "pointer",
           }}
         >
           Login
         </button>
 
-        <div style={{ marginTop: "20px", textAlign: "center" }}>
-          <p><strong>Test Accounts</strong></p>
+        <div
+          style={{
+            marginTop: "20px",
+            textAlign: "center",
+            fontSize: "14px",
+            lineHeight: "1.8",
+          }}
+        >
+          <p>
+            <strong>Test Accounts</strong>
+          </p>
           <p>admin@gmail.com / 123</p>
           <p>manager@gmail.com / 123</p>
           <p>user@gmail.com / 123</p>
@@ -118,6 +138,7 @@ const inputStyle = {
   border: "1px solid #ddd",
   fontSize: "16px",
   marginBottom: "20px",
+  boxSizing: "border-box",
 };
 
 export default Login;

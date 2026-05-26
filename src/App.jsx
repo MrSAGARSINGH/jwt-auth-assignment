@@ -17,22 +17,30 @@ function HomePage() {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          padding: "20px 80px",
+          padding: "15px 25px",
           background: "rgba(255,255,255,0.1)",
           backdropFilter: "blur(10px)",
+          flexWrap: "wrap",
+          gap: "10px",
         }}
       >
         <h1
           style={{
             color: "white",
-            fontSize: "36px",
+            fontSize: "clamp(28px, 5vw, 36px)",
             fontWeight: "bold",
           }}
         >
           JWT Auth
         </h1>
 
-        <div style={{ display: "flex", gap: "15px" }}>
+        <div
+          style={{
+            display: "flex",
+            gap: "15px",
+            flexWrap: "wrap",
+          }}
+        >
           <button
             onClick={() => navigate("/login")}
             style={buttonStyle}
@@ -53,21 +61,22 @@ function HomePage() {
         </div>
       </nav>
 
-      {/* Hero */}
+      {/* Hero Section */}
       <div
         style={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           textAlign: "center",
-          paddingTop: "80px",
+          padding: "60px 20px",
         }}
       >
         <h1
           style={{
             color: "white",
-            fontSize: "70px",
+            fontSize: "clamp(35px, 7vw, 70px)",
             fontWeight: "bold",
+            lineHeight: "1.2",
           }}
         >
           JWT Authentication System
@@ -76,19 +85,22 @@ function HomePage() {
         <p
           style={{
             color: "white",
-            fontSize: "28px",
+            fontSize: "clamp(18px, 3vw, 28px)",
             marginTop: "20px",
+            padding: "0 20px",
           }}
         >
           Role-Based Access Control with MERN Stack
         </p>
 
+        {/* Features Card */}
         <div
           style={{
-            width: "900px",
+            width: "90%",
+            maxWidth: "900px",
             background: "white",
             borderRadius: "20px",
-            padding: "40px",
+            padding: "30px",
             marginTop: "50px",
             boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
             textAlign: "left",
@@ -98,19 +110,60 @@ function HomePage() {
             style={{
               textAlign: "center",
               marginBottom: "30px",
-              fontSize: "36px",
+              fontSize: "clamp(28px, 4vw, 36px)",
             }}
           >
             Features
           </h2>
 
-          <p>✅ Secure JWT token-based authentication</p>
-          <br />
-          <p>✅ Three role levels: User, Manager, and Admin</p>
-          <br />
-          <p>✅ Protected routes with role-based authorization</p>
-          <br />
-          <p>✅ Responsive design with React.js</p>
+          <p style={featureText}>
+            ✅ Secure JWT token-based authentication
+          </p>
+
+          <p style={featureText}>
+            ✅ Three role levels: User, Manager, and Admin
+          </p>
+
+          <p style={featureText}>
+            ✅ Protected routes with role-based authorization
+          </p>
+
+          <p style={featureText}>
+            ✅ Responsive design with React.js
+          </p>
+        </div>
+
+        {/* Buttons */}
+        <div
+          style={{
+            display: "flex",
+            gap: "20px",
+            marginTop: "40px",
+            flexWrap: "wrap",
+            justifyContent: "center",
+          }}
+        >
+          <button
+            onClick={() => navigate("/login")}
+            style={{
+              ...buttonStyle,
+              padding: "15px 35px",
+            }}
+          >
+            Login
+          </button>
+
+          <button
+            onClick={() => navigate("/register")}
+            style={{
+              ...buttonStyle,
+              padding: "15px 35px",
+              background: "#22c55e",
+              color: "white",
+            }}
+          >
+            Register
+          </button>
         </div>
       </div>
     </div>
@@ -126,6 +179,11 @@ const buttonStyle = {
   fontWeight: "bold",
   fontSize: "16px",
   cursor: "pointer",
+};
+
+const featureText = {
+  fontSize: "clamp(16px, 2vw, 20px)",
+  marginBottom: "18px",
 };
 
 function App() {

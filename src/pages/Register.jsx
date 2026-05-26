@@ -14,56 +14,60 @@ function Register() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        padding: "20px",
       }}
     >
       <div
         style={{
-          width: "500px",
+          width: "90%",
+          maxWidth: "500px",
           background: "white",
           borderRadius: "20px",
-          padding: "40px",
+          padding: "35px",
           boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
+          margin: "20px",
         }}
       >
         <h1
           style={{
             textAlign: "center",
             marginBottom: "30px",
-            fontSize: "42px",
+            fontSize: "clamp(30px, 5vw, 42px)",
+            color: "#16a34a",
           }}
         >
           Register
         </h1>
 
-        <label>Full Name</label>
+        <label style={labelStyle}>Full Name</label>
         <input
           type="text"
           placeholder="Enter your name"
           style={inputStyle}
         />
 
-        <label>Email Address</label>
+        <label style={labelStyle}>Email Address</label>
         <input
           type="email"
           placeholder="Enter your email"
           style={inputStyle}
         />
 
-        <label>Password</label>
+        <label style={labelStyle}>Password</label>
         <input
           type="password"
           placeholder="Enter your password"
           style={inputStyle}
         />
 
-        <label>Confirm Password</label>
+        <label style={labelStyle}>Confirm Password</label>
         <input
           type="password"
           placeholder="Confirm your password"
           style={inputStyle}
         />
 
-        <label>Role</label>
+        <label style={labelStyle}>Role</label>
         <select style={inputStyle}>
           <option>User</option>
           <option>Manager</option>
@@ -82,6 +86,7 @@ function Register() {
             fontSize: "18px",
             fontWeight: "bold",
             marginTop: "20px",
+            cursor: "pointer",
           }}
         >
           Register
@@ -91,14 +96,31 @@ function Register() {
           style={{
             textAlign: "center",
             marginTop: "20px",
+            fontSize: "14px",
           }}
         >
-          Already have an account? Login here
+          Already have an account?{" "}
+          <span
+            style={{
+              color: "#2563eb",
+              cursor: "pointer",
+              fontWeight: "bold",
+            }}
+            onClick={() => navigate("/login")}
+          >
+            Login here
+          </span>
         </p>
       </div>
     </div>
   );
 }
+
+const labelStyle = {
+  fontWeight: "600",
+  display: "block",
+  marginBottom: "8px",
+};
 
 const inputStyle = {
   width: "100%",
@@ -106,8 +128,8 @@ const inputStyle = {
   borderRadius: "10px",
   border: "1px solid #ddd",
   fontSize: "16px",
-  marginTop: "8px",
   marginBottom: "20px",
+  boxSizing: "border-box",
 };
 
 export default Register;
