@@ -4,7 +4,7 @@ import Register from "./pages/Register";
 import AdminDashboard from "./pages/AdminDashboard";
 import ManagerDashboard from "./pages/ManagerDashboard";
 import UserDashboard from "./pages/UserDashboard";
-import ProtectedRoute from "./Components/protectedRoute";
+import ProtectedRoute from "./components/protectedRoute";
 
 function HomePage() {
   const navigate = useNavigate();
